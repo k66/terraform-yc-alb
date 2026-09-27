@@ -458,7 +458,6 @@ resource "yandex_alb_load_balancer" "alb_load_balancer" {
   name               = try(var.alb_load_balancer.name, local.default_values.alb_lb_name)
   description        = try(var.alb_load_balancer.description, local.default_values.alb_lb_description)
   labels             = try(var.alb_load_balancer.labels, var.alb_load_balancer_labels)
-  region_id          = try(var.alb_load_balancer.region_id, local.default_values.region_id)
   security_group_ids = local.security_groups_list
 
   allocation_policy {
